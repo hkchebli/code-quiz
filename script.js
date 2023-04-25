@@ -8,11 +8,10 @@ var question = document.getElementById("question");
 var displaywins = document.getElementById("wins");
 var displayloss = document.getElementById("losses");
 var timerEl = document.getElementById("timer");
-Answer1 = "1";
 var display_corrAnswer = document.getElementById("correct-answer");
 var display_wrongAnswer = document.getElementById("wrong-answer");
-corrAnswer = 0;
-wrongAnswer = 0;
+var corrAnswer = 0;
+var wrongAnswer = 0;
 var correct;
 
 var option1 = document.getElementById("option1");
@@ -21,6 +20,20 @@ var option3 = document.getElementById("option3");
 var option4 = document.getElementById("option4");
 //var options =document.querySelectorAll("options");
 var optionss = document.getElementById("options");
+
+var renderQuestion = function (questionNum) {
+    console.log("render question: " + questionNum);
+    option1.textContent = Questions[questionNum].choice1;
+    option2.textContent = Questions[questionNum].choice2;
+    option3.textContent = Questions[questionNum].choice3;
+    option4.textContent = Questions[questionNum].choice4;
+
+    option1.value = Questions[questionNum].choice1;
+    option2.value = Questions[questionNum].choice2;
+    option3.value = Questions[questionNum].choice3;
+    option4.value = Questions[questionNum].choice4;
+    correct = Questions[questionNum].Answer;
+}
 
 var Questions = [{
     question: "How many elements can you apply an 'ID' attribute to?",
@@ -49,7 +62,7 @@ var Questions = [{
 ];
 
 startButton.addEventListener("click", function (event) {
-    var i = 0;
+
 
     console.log(event);
     let losscount = 0;
@@ -71,70 +84,52 @@ startButton.addEventListener("click", function (event) {
     }, 1000);
 
 
-    question.textContent = Questions[i].question;
-
-    option1.textContent = Questions[i].choice1;
-    option2.textContent = Questions[i].choice2;
-    option3.textContent = Questions[i].choice3;
-    option4.textContent = Questions[i].choice4;
-
-    option1.value = Questions[i].choice1;
-    option2.value = Questions[i].choice2;
-    option3.value = Questions[i].choice3;
-    option4.value = Questions[i].choice4;
-    correct = Questions[i].Answer;
+    renderQuestion(0);
     
+    var i = 1;
 
     optionss.addEventListener("click", function (event) {
-        console.log(event.target.value);
+        
         checkAnswer(event.target.value);
+
+        console.log(event.target.value);
+
+        
+        
+        console.log("the value of i is: "+ i)
+        if (i === (Questions.length)) {
+            
+            endGame();
+        }
+        else{
+            renderQuestion(i);
+        }
         i++;
 
-
-
-
-
-        option1.textContent = Questions[i].choice1;
-        option2.textContent = Questions[i].choice2;
-        option3.textContent = Questions[i].choice3;
-        option4.textContent = Questions[i].choice4;
-
-        option1.value = Questions[i].choice1;
-        option2.value = Questions[i].choice2;
-        option3.value = Questions[i].choice3;
-        option4.value = Questions[i].choice4;
-        correct = Questions[i].Answer;
-
-
-        checkAnswer(event.target.value);
-
-
-        
-
-
-
-
-        
     });
 
     function checkAnswer(answer) {
-        
 
 
-        if (answer === correct ) {
+        if (answer === correct) {
             corrAnswer++;
             display_corrAnswer.textContent = corrAnswer;
-           
+            console.log(" this is correct count: " + corrAnswer);
 
-        } else  {
+        } else {
 
             wrongAnswer++;
             display_wrongAnswer.textContent = wrongAnswer;
+            console.log(" this is worng count: " + wrongAnswer);
 
 
 
         }
 
+    }
+
+    function endGame() {
+        console.log("GAME OVER!");
     }
 });
 

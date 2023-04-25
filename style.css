@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ca9f5e;
+  color: #001b44;
+}
+
+h2 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  margin-top: 20px;
+  display: block;
+}
+
+#option1, #option2, #option3, #option4{
+    background-color: gold;
+    border-radius: 8px;
+    color: #001b44;
+    cursor: pointer;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    line-height: 30px;
+    max-width: 500px;
+    padding: 10px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-left: -10px;
+    display: block;
+}
+button {
+    display: flex;
+  background-color: #001b44;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin: 0.6em auto;
+  
+}
+
+label {
+  color: #8a3232;
+}
+
+select {
+  font-size: 30px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: whitesmoke;
+}
+
+.card {
+  background-color:	#be703b;
+  border: 1px solid #eceff1;
+  border-radius: 8px;
+ 
+  margin: 40px 20px;
+  padding: 20px;
+  width: 40vw;
+  float: right;
+}
+.question {
+    background-color:	#be703b;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+  
+    margin: 40px 20px;
+    padding: 20px;
+    width: 40vw;
+    float: left;
+  }
+
+.card::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+#msg {
+  display: block;
+  min-height: 100px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
+}

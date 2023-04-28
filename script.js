@@ -14,7 +14,7 @@ var corrAnswer = 0;
 var wrongAnswer = 0;
 var correct;
 
-scoreCount=0;
+var scoreCount=0;
 var displayScore=document.getElementById("score");
 
 var option1 = document.getElementById("option1");
@@ -216,6 +216,7 @@ startButton.addEventListener("click", function (event) {
     function endGame() {
         
        
+       localStorage.setItem('mostRecentScore', scoreCount);
         return window.location.assign("./endgame.html");
     }
     

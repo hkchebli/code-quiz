@@ -31,8 +31,8 @@ THEN I can save my initials and my score
 I struggled with the localstorage. I had a problem using the getItem and setItem functions to get the highscores and current scores and use them in other pages.
 ```
 ## Resources
-https://css-tricks.com/snippets/css/typewriter-effect/
-https://www.youtube.com/watch?v=DFhmNLKwwGw
+* https://css-tricks.com/snippets/css/typewriter-effect/
+* https://www.youtube.com/watch?v=DFhmNLKwwGw
 
 ## Notes
 
@@ -53,4 +53,4 @@ in this case the user chose only special characters and uppercase letters with a
 ```
 please find the deployed link below:
 ```
-https://hkchebli.github.io/code-quiz
+* https://hkchebli.github.io/code-quiz

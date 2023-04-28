@@ -11,36 +11,44 @@
 
 <body>
     <div class="code quiz">
-        <h2>click 'START' to begin the quiz</h2>
+
+        <h2>
+            <a href="" class="typewrite" data-period="2000"
+                data-type='[ "Welcome to our coding quiz", "answer as many questions correctly", "you have 60 seconds", "best of luck!" ]'>
+                <span class="wrap"></span>
+            </a>
+        </h2>
 
         <button id="start">START</button>
 
     </div>
-
+    
     <div class="question">
         <h3 id="question"><span>question here</span></h3>
-    <div id="options">
+        <div id="options">
             <ul>
                 <button id="option1">A</button>
-                <button id="option2" >B</button>
-                <button id="option3" >C</button>
+                <button id="option2">B</button>
+                <button id="option3">C</button>
                 <button id="option4">D</button>
 
             </ul>
-    </div>
+        </div>
     </div>
 
     <div class="card">
         <h2>Previous scores</h2>
         <p>Correct Answers: <span id="correct-answer">0</span></p>
         <p>Wrong answers: <span id="wrong-answer"> 0</span></p>
+        <p>Score: <span id="score"> 0</span></p>
         <p>wins: <span id="wins">0</span></p>
         <p>Loss: <span id="losses"> 0</span></p>
-        <p>Timer: <span id="timer"> 10 </span></p>
+        <p>Timer: <span id="timer"> 60 </span></p>
 
     </div>
-
+   
     <script src="./script.js"></script>
+    <script src="./end.js"></script>
 </body>
 
 </html>
